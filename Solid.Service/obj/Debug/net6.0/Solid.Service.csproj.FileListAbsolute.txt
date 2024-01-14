@@ -1,0 +1,30 @@
+Y:\teachers for hitmachut\Malka Bruk\Group3\Solid\Solid.Service\bin\Debug\net6.0\Solid.Service.deps.json
+Y:\teachers for hitmachut\Malka Bruk\Group3\Solid\Solid.Service\bin\Debug\net6.0\Solid.Service.dll
+Y:\teachers for hitmachut\Malka Bruk\Group3\Solid\Solid.Service\bin\Debug\net6.0\Solid.Service.pdb
+Y:\teachers for hitmachut\Malka Bruk\Group3\Solid\Solid.Service\bin\Debug\net6.0\Solid.Core.dll
+Y:\teachers for hitmachut\Malka Bruk\Group3\Solid\Solid.Service\bin\Debug\net6.0\Solid.Core.pdb
+Y:\teachers for hitmachut\Malka Bruk\Group3\Solid\Solid.Service\obj\Debug\net6.0\Solid.Service.csproj.AssemblyReference.cache
+Y:\teachers for hitmachut\Malka Bruk\Group3\Solid\Solid.Service\obj\Debug\net6.0\Solid.Service.GeneratedMSBuildEditorConfig.editorconfig
+Y:\teachers for hitmachut\Malka Bruk\Group3\Solid\Solid.Service\obj\Debug\net6.0\Solid.Service.AssemblyInfoInputs.cache
+Y:\teachers for hitmachut\Malka Bruk\Group3\Solid\Solid.Service\obj\Debug\net6.0\Solid.Service.AssemblyInfo.cs
+Y:\teachers for hitmachut\Malka Bruk\Group3\Solid\Solid.Service\obj\Debug\net6.0\Solid.Service.csproj.CoreCompileInputs.cache
+Y:\teachers for hitmachut\Malka Bruk\Group3\Solid\Solid.Service\obj\Debug\net6.0\Solid.Service.csproj.CopyComplete
+Y:\teachers for hitmachut\Malka Bruk\Group3\Solid\Solid.Service\obj\Debug\net6.0\Solid.Service.dll
+Y:\teachers for hitmachut\Malka Bruk\Group3\Solid\Solid.Service\obj\Debug\net6.0\refint\Solid.Service.dll
+Y:\teachers for hitmachut\Malka Bruk\Group3\Solid\Solid.Service\obj\Debug\net6.0\Solid.Service.pdb
+Y:\teachers for hitmachut\Malka Bruk\Group3\Solid\Solid.Service\obj\Debug\net6.0\ref\Solid.Service.dll
+Y:\Groups\Group_3\פרוידיגר  חנה\NET.core\Solid\Solid.Service\bin\Debug\net6.0\Solid.Service.deps.json
+Y:\Groups\Group_3\פרוידיגר  חנה\NET.core\Solid\Solid.Service\bin\Debug\net6.0\Solid.Service.dll
+Y:\Groups\Group_3\פרוידיגר  חנה\NET.core\Solid\Solid.Service\bin\Debug\net6.0\Solid.Service.pdb
+Y:\Groups\Group_3\פרוידיגר  חנה\NET.core\Solid\Solid.Service\bin\Debug\net6.0\Solid.Core.dll
+Y:\Groups\Group_3\פרוידיגר  חנה\NET.core\Solid\Solid.Service\bin\Debug\net6.0\Solid.Core.pdb
+Y:\Groups\Group_3\פרוידיגר  חנה\NET.core\Solid\Solid.Service\obj\Debug\net6.0\Solid.Service.csproj.AssemblyReference.cache
+Y:\Groups\Group_3\פרוידיגר  חנה\NET.core\Solid\Solid.Service\obj\Debug\net6.0\Solid.Service.GeneratedMSBuildEditorConfig.editorconfig
+Y:\Groups\Group_3\פרוידיגר  חנה\NET.core\Solid\Solid.Service\obj\Debug\net6.0\Solid.Service.AssemblyInfoInputs.cache
+Y:\Groups\Group_3\פרוידיגר  חנה\NET.core\Solid\Solid.Service\obj\Debug\net6.0\Solid.Service.AssemblyInfo.cs
+Y:\Groups\Group_3\פרוידיגר  חנה\NET.core\Solid\Solid.Service\obj\Debug\net6.0\Solid.Service.csproj.CoreCompileInputs.cache
+Y:\Groups\Group_3\פרוידיגר  חנה\NET.core\Solid\Solid.Service\obj\Debug\net6.0\Solid.Service.csproj.CopyComplete
+Y:\Groups\Group_3\פרוידיגר  חנה\NET.core\Solid\Solid.Service\obj\Debug\net6.0\Solid.Service.dll
+Y:\Groups\Group_3\פרוידיגר  חנה\NET.core\Solid\Solid.Service\obj\Debug\net6.0\refint\Solid.Service.dll
+Y:\Groups\Group_3\פרוידיגר  חנה\NET.core\Solid\Solid.Service\obj\Debug\net6.0\Solid.Service.pdb
+Y:\Groups\Group_3\פרוידיגר  חנה\NET.core\Solid\Solid.Service\obj\Debug\net6.0\ref\Solid.Service.dll
