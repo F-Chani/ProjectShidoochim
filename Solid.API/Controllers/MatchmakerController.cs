@@ -30,11 +30,7 @@ namespace ProjectApi.Controllers
         {
             return Ok(_matchMakerService.GetById(id));
         }
-       // [HttpGet("{ExperienceYear}")]
-        //public IEnumerable<Girl> GetAge(int experienceYear)
-        //{
-          //  return matchmaker.Where(x => x.ExperienceYear>=GetAge());
-        //}
+
         // POST api/<MatchmakerController>
         [HttpPost]
         public void Post([FromBody] Matchmaker value)
