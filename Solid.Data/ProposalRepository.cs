@@ -18,34 +18,34 @@ namespace Solid.Data
             _context = context;
         }
 
-        public Proposal GetById(int id)
+        public  async Task<Proposal> GetByIdAsync(int id)
         {
-            return _context.proposal.Find(id);
+            return  _context.proposal.Find(id);
         }
-        public List<Proposal> GetAll(string? text = "")
+        public async Task< List<Proposal>> GetAllAsync(string? text = "")
         {
-            return _context.proposal.Include(x=>x.Guy).Include(x=>x.Girl).ToList();
+            return await _context.proposal.Include(x => x.Guy).Include(x => x.Girl).ToListAsync();
         }
 
-        public Proposal Post(Proposal proposal)
+        public  async Task<Proposal> PostAsync(Proposal proposal)
         {
             _context.proposal.Add(proposal);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
             return proposal;
         }
 
-        public Proposal put(int id, Proposal proposal)
+        public async Task< Proposal> PutAsync(int id, Proposal proposal)
         {
-            var index = GetById(id);
-            index.Id = proposal.Id;
-            _context.SaveChanges();
+            var index =  await GetByIdAsync(id);
+            index = proposal;
+             await  _context.SaveChangesAsync();
             return proposal;
         }
-        public void Delete(int id)
+        public async Task  DeleteAsync(int id)
         {
-            var proposal = GetById(id);
+            var proposal =  await GetByIdAsync(id);
             _context.proposal.Remove(proposal);
-            _context.SaveChanges();
+           await _context.SaveChangesAsync();
         }
 
     }

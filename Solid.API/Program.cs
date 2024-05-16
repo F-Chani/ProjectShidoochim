@@ -1,3 +1,5 @@
+using Solid.API.Mapping;
+using Solid.API.Middlewares;
 using Solid.Core.Mapping;
 using Solid.Core.Repositories;
 using Solid.Core.Services;
@@ -27,7 +29,7 @@ builder.Services.AddScoped<IMatchmakerRepository, MatchmakerRepository>();
 builder.Services.AddScoped<IMatchmakerService, MatchmakerService>();
 builder.Services.AddScoped<IProposalService, ProposalService>();
 builder.Services.AddScoped<IProposalRepository, ProposalRepository>();
-builder.Services.AddAutoMapper(typeof(MappingProfile));
+builder.Services.AddAutoMapper(typeof(MappingProfile),typeof(PostModelsMappingProfile));
 
 builder.Services.AddDbContext<DataContext>();
 //builder.Services.AddSingleton<DataContext>();
@@ -40,6 +42,25 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+app.UseMiddleware<TrackMiddleware>();
+
+app.UseMiddleware<ShabbatMiddleware>();
+//middleware
+app.Use(async (context, next) =>
+{
+    Console.WriteLine("middleware start");
+    var shabbat = false;
+
+    if (shabbat)
+    {
+        context.Response.StatusCode = StatusCodes.Status400BadRequest;
+        return;
+    }
+    // Do work that can write to the Response.
+    await next(context);
+    Console.WriteLine("middleware end");
+    // Do logging or other work that doesn't write to the Response.
+});
 
 app.UseHttpsRedirection();
 

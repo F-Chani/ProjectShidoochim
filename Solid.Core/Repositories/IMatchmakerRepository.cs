@@ -9,10 +9,10 @@ namespace Solid.Core.Repositories
 {
     public interface IMatchmakerRepository
     {
-        List<Matchmaker> GetAll(string? text = "");
-        Matchmaker GetById(int id);
-        void Delete(int id);
-        Matchmaker Post(Matchmaker matchmaker);
-        Matchmaker put(int id, Matchmaker matchmaker);
+         Task<List<Matchmaker>> GetAll(string? text = "");
+        Task<Matchmaker> GetById(int id);
+        Task Delete(int id);
+        Task<Matchmaker> Post(Matchmaker matchmaker);
+        Task<Matchmaker> Put(int id, Matchmaker matchmaker);
     }
 }

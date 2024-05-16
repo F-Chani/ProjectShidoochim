@@ -12,8 +12,8 @@ using Solid.Data;
 namespace Solid.Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20240104132026_proposal")]
-    partial class proposal
+    [Migration("20240125110512_try1")]
+    partial class try1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

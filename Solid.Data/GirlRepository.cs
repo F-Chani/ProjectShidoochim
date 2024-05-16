@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using Solid.Core.Models;
 using Solid.Core.Repositories;
 
@@ -15,36 +17,44 @@ namespace Solid.Data
         {
             _context = context; 
         }
-        public Girl GetById(int id)
+        public async Task< Girl> GetById(int id)
         {
-            return _context.girls.Find(id);
+            return   _context.girls.Find(id);
         }
 
-        public List<Girl> GetAll(string? text = "")
+        public  async Task<List<Girl>> GetAll(string? text = "")
         {
-            return _context.girls.ToList();
+            return  await _context.girls.ToListAsync();
         }
 
-        public Girl Post(Girl girl)
+        public  async Task<Girl> Post(Girl girl)
         {
             _context.girls.Add(girl);
             _context.SaveChanges();
             return girl;
         }
 
-        public Girl put(int id, Girl girl)
+        public  async Task<Girl> put(int id, Girl girl)
         {
-            var index = GetById(id);
+            var index = await GetById(id);
            index.Name=girl.Name;
-
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
             return index;
         }
-        public void Delete(int id)
+        public async Task Delete(int id)
         {
-            var index = GetById(id);
+            var index = await GetById(id);
             _context.girls.Remove(index);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
+
+        }
+
+       public async Task<Girl> post(Girl girl)
+        {
+             _context.girls.Add(girl);
+            await _context.SaveChangesAsync();
+            return girl;
+          
         }
     }
 }

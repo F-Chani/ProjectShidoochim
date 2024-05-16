@@ -19,37 +19,45 @@ namespace ProjectApi.Controllers
     
         // GET: api/<MatchmakerController>
         [HttpGet]
-        public ActionResult<Matchmaker> Get()
+        public async Task< ActionResult<Matchmaker>> Get()
         {
-            return Ok(_matchMakerService.GetAll());
+            var m= _matchMakerService.GetAll();
+            return Ok(m);
         }
 
         // GET api/<MatchmakerController>/5
         [HttpGet("{id}")]
         public ActionResult<Matchmaker> GetById(int id)
         {
-            return Ok(_matchMakerService.GetById(id));
+            var matchmaker = _matchMakerService.GetById(id);    
+            return Ok(matchmaker);
         }
 
         // POST api/<MatchmakerController>
         [HttpPost]
-        public void Post([FromBody] Matchmaker value)
+        public async Task<ActionResult> Post([FromBody] Matchmaker value)
         {
-            _matchMakerService.Post(value);
+
+           var m= await _matchMakerService.Post(value);
+            return Ok(m);
         }
 
         // PUT api/<MatchmakerController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] Matchmaker value)
+        public async Task<ActionResult> Put(int id, [FromBody] Matchmaker value)
         {
-            _matchMakerService.put(id, value);
+            var m= await _matchMakerService.Put(id, value);
+           return Ok(m);
         }
 
         // DELETE api/<MatchmakerController>/5
         [HttpDelete("{id}")]
-        public ActionResult Delete(int id)
+        public async Task< ActionResult> Delete(int id)
         {
-            _matchMakerService.Delete(id);  
+            var m= await _matchMakerService.GetById(id); 
+            if(m==null)
+                return NotFound();
+
             return NoContent();
         }
     }

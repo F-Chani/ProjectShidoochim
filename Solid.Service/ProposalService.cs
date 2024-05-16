@@ -16,28 +16,28 @@ namespace Solid.Service
         {
             _ProposalRepository= proposalRepository;    
         }
-        public List<Proposal> GetAll(string? text = "")
+        public async Task< List<Proposal>> GetAllAsync(string? text = "")
         {
-            return  _ProposalRepository.GetAll(text);   
+            return  await _ProposalRepository.GetAllAsync(text);   
         }
 
-        public Proposal GetById(int id)
+        public  async Task<Proposal >GetByIdAsync(int id)
         {
-            return _ProposalRepository.GetById(id);
+            return  await _ProposalRepository.GetByIdAsync(id);
         }
 
-        public Proposal Post(Proposal proposal)
+        public async Task<Proposal> PostAsync(Proposal proposal)
         {
-           return _ProposalRepository.Post(proposal);
+           return  await _ProposalRepository.PostAsync(proposal);
         }
 
-        public Proposal put(int id, Proposal proposal)
+        public async Task<Proposal> PutAsync(int id, Proposal proposal)
         {
-            return _ProposalRepository.put(id, proposal);   
+            return  await _ProposalRepository.PutAsync(id, proposal);   
         }
-        public void Delete(int id)
+        public async Task DeleteAsync(int id)
         {
-            _ProposalRepository.Delete(id);
+            await _ProposalRepository.DeleteAsync(id);
         }
     }
 }

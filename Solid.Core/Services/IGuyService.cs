@@ -9,10 +9,10 @@ namespace Solid.Core.Services
 {
     public interface IGuyService
     {
-        List<Guy> GetAll(string? text = "");
-        Guy GetById(int id);
-        void Delete(int id);
-        void Post(Guy guy);
-        void put(int id, Guy guy);
+        Task<List<Guy>> GetAll(string? text = "");
+        Task<Guy> GetById(int id);
+        Task Delete(int id);
+        Task<Guy> Post(Guy guy);
+        Task<Guy> Put(int id, Guy guy);
     }
 }

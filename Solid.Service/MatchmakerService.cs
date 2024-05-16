@@ -9,38 +9,37 @@ using System.Threading.Tasks;
 
 namespace Solid.Service
 {
-    public class MatchmakerService: IMatchmakerService
+    public class MatchmakerService : IMatchmakerService
     {
         private readonly IMatchmakerRepository _MatchmakerRepository;
         public MatchmakerService(IMatchmakerRepository matchmakerRepository)
         {
-            _MatchmakerRepository = matchmakerRepository;   
+            _MatchmakerRepository = matchmakerRepository;
         }
-        public void Delete(int id)
+        public async Task Delete(int id)
         {
-            _MatchmakerRepository.Delete(id);
+            await _MatchmakerRepository.Delete(id);
         }
 
-        public Matchmaker GetById(int id)
+        public async Task<Matchmaker> GetById(int id)
         {
-            return _MatchmakerRepository.GetById(id);
+            return await _MatchmakerRepository.GetById(id);
         }
 
-        public List<Matchmaker> GetAll(string? text = "")
+        public async Task<List<Matchmaker>> GetAll(string? text = "")
         {
             //לוגיקה עסקית
-            return _MatchmakerRepository.GetAll(text);
+            return await _MatchmakerRepository.GetAll(text);
         }
 
-        public void Post(Matchmaker matchmaker)
+        public async Task<Matchmaker> Post(Matchmaker matchmaker)
         {
-            _MatchmakerRepository.Post(matchmaker);
+            return await _MatchmakerRepository.Post(matchmaker);
         }
 
-        public void put(int id, Matchmaker matchmaker)
+        public async Task<Matchmaker> Put(int id, Matchmaker matchmaker)
         {
-       
-            _MatchmakerRepository.put(id, matchmaker);
+            return await _MatchmakerRepository.Put(id,matchmaker);
         }
     }
 }

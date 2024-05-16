@@ -1,8 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "uQUqyMux+823iLLU/enc5QWrYcwgvXkf0F6zk7xvljKjAN3xk6BbSKLUd+LpdxWHHJGgq4sjLV1khjVfF7c4kA==",
-  "success": true,
+  "dgSpecHash": "MxGLxP7FL15Oi/JPqRUmrKbK3xrQhqGixoEsyHCgI5D48th1FQdaRn3QxsGkI/g4R2OiEf5auMnabMO0sSxiow==",
+  "success": false,
   "projectFilePath": "Y:\\Groups\\Group_3\\פרוידיגר  חנה\\NET.core\\Solid\\Solid.Core\\Solid.Core.csproj",
   "expectedPackageFiles": [],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1301",
+      "level": "Error",
+      "message": "Unable to load the service index for source https://api.nuget.org/v3/index.json.",
+      "libraryId": "AutoMapper"
+    }
+  ]
 }

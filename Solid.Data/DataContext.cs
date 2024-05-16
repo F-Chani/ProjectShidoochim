@@ -16,7 +16,9 @@ namespace Solid.Data
         public DbSet<Proposal> proposal { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=sample_db");
+            optionsBuilder.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=sample1_db");
         }
+
+    
     }
 }

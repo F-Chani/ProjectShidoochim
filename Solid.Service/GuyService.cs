@@ -17,27 +17,28 @@ namespace Solid.Service
             _guyRepository = guyRepository;
         }
 
-        public void Delete(int id)
+       
+        public async Task<Guy> GetById(int id)
         {
-            _guyRepository.Delete(id);
+           return await _guyRepository.GetById(id);    
         }
-        public Guy GetById(int id)
-        {
-           return _guyRepository.GetById(id);    
-        }
-        public List<Guy> GetAll(string? text = "")
+        public async Task<List<Guy>> GetAll(string? text = "")
         {
             //לוגיקה עסקית
-            return _guyRepository.GetAll(text);
+            return await _guyRepository.GetAll(text);
         }
-        public void Post(Guy guy)
+        public async Task<Guy> Post(Guy guy)
         {
-            _guyRepository.Post(guy);
+          return await _guyRepository.Post(guy);
         }
 
-        public void put(int id, Guy guy)
+        public async Task<Guy> put(int id, Guy guy)
         {
-       _guyRepository.put(id, guy); 
+          return await _guyRepository.put(id, guy); 
+        }
+        public async Task Delete(int id)
+        {
+            await _guyRepository.Delete(id);
         }
     }
 

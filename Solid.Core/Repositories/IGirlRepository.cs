@@ -10,10 +10,10 @@ namespace Solid.Core.Repositories
     public interface IGirlRepository
     {
 
-        List<Girl> GetAll(string? text = "");
-        Girl GetById(int id);
-        void Delete(int id);
-        Girl Post(Girl girl);
-        Girl put(int id, Girl girl);
+        Task<List<Girl>> GetAll(string? text = "");
+        Task<Girl> GetById(int id);
+        Task Delete(int id);
+        Task<Girl> Post(Girl girl);
+        Task<Girl> put(int id, Girl girl);
     }
 }

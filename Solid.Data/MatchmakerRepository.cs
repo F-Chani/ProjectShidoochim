@@ -17,37 +17,37 @@ namespace Solid.Data
         {
             _context = context;
         }
-       
-        public Matchmaker GetById(int id)
+
+        public async Task<Matchmaker> GetById(int id)
         {
-            return _context.matchmakers.Find(id);
+            return await _context.matchmakers.Find(id);
         }
 
-        public List<Matchmaker> GetAll(string? text = "")
+        public async Task<List<Matchmaker>> GetAll(string? text = "")
         {
-            //לוגיקה עסקית
-            return (List<Matchmaker>)_context.matchmakers.Include(x=>x.Proposals).ThenInclude(x=>x.Guy).ToList();
+
+            return await _context.matchmakers.Include(x => x.Proposals).ThenInclude(x => x.Guy).ToList();
         }
 
-        public Matchmaker Post(Matchmaker matchmaker)
+        public async Task<Matchmaker> Post(Matchmaker matchmaker)
         {
             _context.matchmakers.Add(matchmaker);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
             return matchmaker;
         }
 
-        public Matchmaker put(int id, Matchmaker matchmaker)
+        public async Task<Matchmaker> Put(int id, Matchmaker matchmaker)
         {
-            var index = GetById(id);
-            index.Name=matchmaker.Name;
-            _context.SaveChanges();
+            var index = await GetById(id);
+            index.Name = matchmaker.Name;
+            await _context.SaveChangesAsync();
             return matchmaker;
         }
-        public void Delete(int id)
+        public async Task Delete(int id)
         {
-            var matchmaker = GetById(id);
+            var matchmaker = await GetById(id);
             _context.matchmakers.Remove(matchmaker);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
         }
 
     }

@@ -9,10 +9,10 @@ namespace Solid.Core.Repositories
 {
     public interface IGuyRepository
     {
-        List<Guy> GetAll(string? text = "");
-        Guy GetById(int id);
-        void Delete(int id);
-        Guy Post(Guy guy);
-        Guy put(int id, Guy guy);
+        Task<List<Guy>> GetAll(string? text = "");
+        Task<Guy >GetById(int id);
+        Task Delete(int id);
+        Task<Guy> Post(Guy guy);
+        Task<Guy> Put(int id, Guy guy);
     }
 }

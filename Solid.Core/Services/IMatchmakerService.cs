@@ -9,10 +9,10 @@ namespace Solid.Core.Services
 {
     public interface IMatchmakerService
     {
-        List<Matchmaker> GetAll(string? text = "");
-        Matchmaker GetById(int id);
-        void Delete(int id);   
-        void Post(Matchmaker matchmaker);   
-        void put(int id,Matchmaker matchmaker );
+        Task<List<Matchmaker>> GetAll(string? text = "");
+        Task<Matchmaker> GetById(int id);
+        Task Delete(int id);   
+        Task<Matchmaker> Post(Matchmaker matchmaker);   
+        Task<Matchmaker> Put(int id,Matchmaker matchmaker );
     }
 }

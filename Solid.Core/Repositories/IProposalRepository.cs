@@ -9,10 +9,10 @@ namespace Solid.Core.Repositories
 {
     public interface IProposalRepository
     {
-        List<Proposal> GetAll(string? text = "");
-        Proposal GetById(int id);
-        void Delete(int id);
-        Proposal Post(Proposal proposal);
-        Proposal put(int id, Proposal proposal);
+        Task<List<Proposal>> GetAllAsync(string? text = "");
+        Task<Proposal> GetByIdAsync(int id);
+        Task DeleteAsync(int id);
+        Task<Proposal> PostAsync(Proposal proposal);
+        Task<Proposal> PutAsync(int id, Proposal proposal);
     }
 }

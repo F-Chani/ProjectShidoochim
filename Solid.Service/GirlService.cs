@@ -16,30 +16,36 @@ namespace Solid.Service
         {
             _girlRepository = girlRepository;
         }
-        public void Delete(int id)
+        public async Task Delete(int id)
         {
-            _girlRepository.Delete(id);
+           await _girlRepository.Delete(id);
         }
 
-        public Girl GetById(int id)
+        public  async Task<Girl> GetById(int id)
         {
-            return _girlRepository.GetById(id);
+            return await _girlRepository.GetById(id);
         }
 
-        public List<Girl> GetAll(string? text = "")
+        public  async Task<List<Girl>> GetAll(string? text = "")
         {
-            //לוגיקה עסקית
-            return _girlRepository.GetAll(text);
+            
+            return await _girlRepository.GetAll(text);
         }
 
-        public void Post(Girl girl)
+        public async Task<Girl> Post(Girl girl)
         {
-            _girlRepository.Post(girl);
+           return await _girlRepository.Post(girl);
         }
 
-        public void put(int id, Girl girl)
+        public async Task<Girl> put(int id, Girl girl)
         {
-            _girlRepository.put(id, girl);
+            return await _girlRepository.put(id, girl);
+        }
+
+        async  Task<Girl> IGirlService.Post(Girl girl)
+        {
+          return await  _girlRepository.Post(girl);
+            
         }
     }
 }

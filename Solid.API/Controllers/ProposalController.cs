@@ -18,37 +18,45 @@ namespace Solid.API.Controllers
         }
         // GET: api/<ProposalController>
         [HttpGet]
-        public ActionResult<Proposal> Get()
+        public async Task< ActionResult<Proposal>> Get()
         {
-            return Ok(_ProposalService.GetAll());
+
+            var p=await _ProposalService.GetAllAsync();
+            return Ok(p);
         }
 
         // GET api/<ProposalController>/5
         [HttpGet("{id}")]
-        public ActionResult<Proposal> GetById(int id)
+        public async Task< ActionResult<Proposal>> GetById(int id)
         {
-            return Ok(_ProposalService.GetById(id));
+            var p = await _ProposalService.GetByIdAsync(id);
+            return Ok(p);
         }
 
         // POST api/<ProposalController>
         [HttpPost]
-        public void Post([FromBody] Proposal proposal)
+        public async Task<ActionResult> Post([FromBody] Proposal proposal)
         {
-            _ProposalService.Post(proposal);
+          var p= await  _ProposalService.PostAsync(proposal);
+            return Ok(p);   
         }
 
         // PUT api/<ProposalController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] Proposal proposal)
+        public async Task<ActionResult> Put(int id, [FromBody] Proposal proposal)
         {
-            _ProposalService.put(id, proposal); 
+           var p=await _ProposalService.PutAsync(id, proposal); 
+            return Ok(p);
         }
 
         // DELETE api/<ProposalController>/5
         [HttpDelete("{id}")]
-        public ActionResult Delete(int id)
+        public async Task< ActionResult> Delete(int id)
         {
-            _ProposalService.Delete(id);
+           var p=await _ProposalService.GetByIdAsync(id);
+            if(p== null)
+                return NotFound();
+            await _ProposalService.DeleteAsync(id);
             return NoContent();
         }
     }

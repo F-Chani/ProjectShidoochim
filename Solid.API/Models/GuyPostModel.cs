@@ -1,6 +1,6 @@
-﻿namespace Solid.API
+﻿namespace Solid.API.Models
 {
-    public class GuyPost
+    public class GuyPostModel
     {
         public string Name { get; set; }
 

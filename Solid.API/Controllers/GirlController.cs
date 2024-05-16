@@ -18,42 +18,47 @@ namespace ProjectApi.Controllers
 
         // GET: api/<GirlController>
         [HttpGet]
-        public ActionResult<Girl> Get()
+        public  async Task<ActionResult<Girl>> Get()
         {
-            return Ok(_girlService.GetAll());
+          var g= _girlService.GetAll();
+            return  Ok(g);
         }
-        //[HttpGet("{age}")]
-        //public IEnumerable<Girl> GetAge(int age)
-        //{
-        //    return contaxt.girls.Where(x => x.Age == age);
-        //}
-
+      
         // GET api/<GirlController>/5
         [HttpGet("{id}")]
-        public ActionResult< Girl> GetById(int id)
+        public async Task< ActionResult< Girl>> GetById(int id)
         {
-            return Ok(_girlService.GetById(id));
+            var g= _girlService.GetById(id);
+            return Ok(g);
         }
 
         // POST api/<GirlController>
         [HttpPost]
-        public void Post([FromBody] Girl girl)
+        public async Task<ActionResult> Post([FromBody] Girl girl)
         {
-            _girlService.Post(girl);
+            var result = _girlService.Post(girl);
+            return Ok(result.Result);
         }
 
         // PUT api/<GirlController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] Girl girl)
+        public async Task<ActionResult> Put(int id, [FromBody] Girl girl)
         {
-            _girlService.put(id, girl);
+            var g = await _girlService.GetById(id);
+            if (g == null)
+                return NotFound();
+            g=await _girlService.put(id, girl);
+            return Ok(g);
         }
 
         // DELETE api/<GirlController>/5
         [HttpDelete("{id}")]
-        public ActionResult Delete(int id)
+        public async Task< ActionResult> Delete(int id)
         {
-            _girlService.Delete(id);
+           var g=await _girlService.GetById(id);
+            if (g==null)
+                return NotFound();
+            await _girlService.Delete(id);
             return NoContent();
         }
     }
